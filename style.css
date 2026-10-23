@@ -18,49 +18,63 @@ body {
   line-height: 1.6;
 }
 
-main {
-  max-width: 36rem;
-  margin: 0 auto;
-  padding: 0;
-}
-
 a { color: var(--link); }
 a:hover { background: var(--link); color: var(--paper); }
 a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
-/* Picture with another picture on top */
-.hero {
+/* ---------- Index page ---------- */
+
+/* The page is exactly 2 screens tall. Change 200svh to make it longer/shorter. */
+.home .page {
   position: relative;
-  height: 100vh;
-  height: 100svh;      /* exact visible height on phones */
-  line-height: 0;
+  height: 200vh;
+  height: 200svh;
+  background: url("images/background.jpg") center / cover no-repeat;
 }
-.hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* fills the screen, crops the edges */
-  object-position: center;
-  display: block;
-}
-.hero-title {
+
+/* Title picture at the top */
+.home .title {
   position: absolute;
-  top: 50%;
+  top: 1.5rem;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;          /* size of the text picture */
+  transform: translateX(-50%);
+  width: 80%;           /* size of the title picture */
+  max-width: 36rem;
   height: auto;
 }
 
-/* Numbered links in a column */
-.links {
-  margin: 1.5rem 0;
-  padding-left: 2.5rem;
+/* Links lower down: top: 110svh = just past the first screen */
+.home .menu {
+  position: absolute;
+  top: 110vh;
+  top: 110svh;
+  left: 1rem;
+  right: 1rem;
+  max-width: 24rem;
 }
-.links li { padding: 0.25rem 0; }
+.home .links {
+  margin: 0 0 1rem;
+  padding: 0;
+}
+.home .links li {
+  list-style-position: inside;     /* number sits inside the label */
+  background: var(--paper);        /* keeps text readable on the picture */
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 0.4rem;
+}
+.home .video-link {
+  margin: 0;
+  background: var(--paper);
+  padding: 0.35rem 0.75rem;
+  display: inline-block;
+}
 
-.video-link { margin: 1.5rem 0 3rem; }
-
-/* Video page */
+/* ---------- Other pages (video etc.) ---------- */
+main {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
 video, .embed iframe {
   width: 100%;
   display: block;
