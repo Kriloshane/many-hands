@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="home">
+  <!-- Grainy edge effect used by the links (see style.css) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
   <!-- One tall page (2 screens high) with the background behind everything -->
   <div class="page">
 
