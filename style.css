@@ -21,7 +21,7 @@ body {
 main {
   max-width: 36rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0;
 }
 
 a { color: var(--link); }
@@ -31,11 +31,15 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 /* Picture with another picture on top */
 .hero {
   position: relative;
+  height: 100vh;
+  height: 100svh;      /* exact visible height on phones */
   line-height: 0;
 }
 .hero-bg {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;   /* fills the screen, crops the edges */
+  object-position: center;
   display: block;
 }
 .hero-title {
