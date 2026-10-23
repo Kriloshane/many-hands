@@ -29,7 +29,7 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
   position: relative;
   height: 200vh;
   height: 200svh;
-  background: url("images/background.jpg") center / cover no-repeat;
+  background: url("images/background.png") center / cover no-repeat;
 }
 
 /* Title picture at the top */
