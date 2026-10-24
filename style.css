@@ -35,12 +35,10 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 /* Title picture at the top */
 .home .title {
   position: absolute;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;           /* size of the title picture */
-  max-width: 36rem;
-  height: auto;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Links lower down: top: 110svh = just past the first screen.
