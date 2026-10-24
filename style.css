@@ -24,33 +24,17 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
 /* ---------- Index page ---------- */
 
-/* The page is exactly 2 screens tall. Change 200svh to make it longer/shorter. */
+/* The picture fits the screen WIDTH (phone and computer). The page is as
+   tall as the title picture, and the background fills behind it. */
 .home .page {
   position: relative;
-  height: 200vh;
-  height: 200svh;
   background: url("images/background.jpg") center / cover no-repeat;
 }
 
-/* Title picture covers the whole page (phone version) */
 .home .title {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Computer screens: the picture fits the screen WIDTH, and the page
-   becomes as tall as the picture (no cropping, no fixed 2 screens). */
-@media (min-width: 768px) {
-  .home .page { height: auto; }
-  .home .title {
-    position: static;
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+  height: auto;
 }
 
 /* Links lower down: top: 55% = a bit past the middle of the page.
