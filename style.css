@@ -239,3 +239,12 @@ video, .embed iframe {
 }
 .picture .back a { color: #1a1a1a; }
 .picture .back a:hover { background: #1a1a1a; color: var(--cream); }
+
+/* ---------- Video page: same layout as the text pages ---------- */
+.poem video,
+.poem .embed {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.75em;
+}
