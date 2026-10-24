@@ -29,10 +29,10 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
   position: relative;
   height: 200vh;
   height: 200svh;
-  background: url("images/background.png") center / cover no-repeat;
+  background: url("images/background.jpg") center / cover no-repeat;
 }
 
-/* Title picture at the top */
+/* Title picture covers the whole page (phone version) */
 .home .title {
   position: absolute;
   inset: 0;
@@ -41,12 +41,23 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
   object-fit: cover;
 }
 
-/* Links lower down: top: 110svh = just past the first screen.
+/* Computer screens: the picture fits the screen WIDTH, and the page
+   becomes as tall as the picture (no cropping, no fixed 2 screens). */
+@media (min-width: 768px) {
+  .home .page { height: auto; }
+  .home .title {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Links lower down: top: 55% = a bit past the middle of the page.
    The menu is split into 4 equal columns; everything sits in column 2. */
 .home .menu {
   position: absolute;
-  top: 110vh;
-  top: 110svh;
+  top: 55%;             /* 55% of the page height, on phone and desktop */
   left: 0;
   right: 0;
   display: grid;
