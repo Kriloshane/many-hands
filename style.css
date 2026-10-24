@@ -124,3 +124,42 @@ video, .embed iframe {
 }
 .embed { position: relative; aspect-ratio: 16 / 9; }
 .embed iframe { height: 100%; border: 0; }
+
+/* ---------- Text / poem pages (page1.html ... page6.html) ---------- */
+:root { --cream: #f2ebd3; }          /* page colour: change to match your links */
+
+.poem {
+  background: var(--cream);
+  color: #1a1a1a;                    /* stays dark even in dark mode */
+}
+
+/* *** at the top, centred on the whole page */
+.poem .stars {
+  margin: 0;
+  padding-top: 22vh;                 /* big top margin */
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Poem: columns 2 and 3 of 5 (starts 20% in, 40% wide) */
+.poem .text {
+  margin: 12vh 0 0 20%;
+  width: 40%;
+  padding-bottom: 25vh;              /* room to scroll past the end */
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+.poem .text p { margin: 0 0 1.75em; white-space: pre-line; }
+
+.poem .back a { color: #1a1a1a; font-size: 0.9rem; }
+.poem .back a:hover { background: #1a1a1a; color: var(--cream); }
+
+/* Phone: same start (column 2), but stretches to the right edge and the text is bigger */
+@media (max-width: 767px) {
+  .poem .stars { padding-top: 16vh; }
+  .poem .text {
+    margin: 10vh 1.25rem 0 20%;
+    width: auto;
+    font-size: 1.3rem;
+  }
+}
