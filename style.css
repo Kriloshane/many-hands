@@ -211,3 +211,21 @@ video, .embed iframe {
   .home .page::after { animation: none; opacity: 0.2; }
   .home .title { animation: none; }
 }
+
+/* ---------- Picture page (page7.html): picture fits the screen width ---------- */
+.picture {
+  background: var(--cream);
+  color: #1a1a1a;
+}
+.picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.picture .back {
+  margin: 0;
+  padding: 1.5rem 1rem 3rem;
+  font-size: 0.9rem;
+}
+.picture .back a { color: #1a1a1a; }
+.picture .back a:hover { background: #1a1a1a; color: var(--cream); }
