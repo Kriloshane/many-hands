@@ -28,13 +28,31 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
    tall as the title picture, and the background fills behind it. */
 .home .page {
   position: relative;
+  min-height: 100vh;
+  min-height: 100svh;   /* safety: page never collapses if the title image fails to load */
   background: url("images/background.png") center / cover no-repeat;
 }
 
+.home picture {
+  display: block;
+  filter: url(#shimmer);             /* flickering grain; delete this line to turn off */
+}
 .home .title {
   display: block;
   width: 100%;
   height: auto;
+  animation: glow 5s ease-in-out infinite;
+}
+
+/* Soft breathing glow around the title artwork */
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(255, 244, 200, 0.35)); }
+  50%      { filter: drop-shadow(0 0 12px rgba(255, 244, 200, 0.9)); }
+}
+
+/* People who turned off motion on their device get a still picture */
+@media (prefers-reduced-motion: reduce) {
+  .home .title { animation: none; }
 }
 
 /* Links lower down: top: 55% = a bit past the middle of the page.
