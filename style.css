@@ -154,18 +154,28 @@ video, .embed iframe {
 .poem .back a { color: #1a1a1a; font-size: 0.9rem; }
 .poem .back a:hover { background: #1a1a1a; color: var(--cream); }
 
-/* Phone: same start (column 2), stretching to the right edge.
-   The font size is calculated so that a line of --chars characters fits the width.
-   If your longest line has more characters, raise --chars (smaller text);
-   if lines are short, lower it (bigger text). */
+/* Justified text: add the word "prose" to the article (class="text prose") */
+.poem .prose {
+  text-align: justify;
+  hyphens: auto;                     /* delete this line to stop words being split */
+  -webkit-hyphens: auto;
+}
+.poem .prose p { white-space: normal; }
+
+/* Phone: the block sits a little left of centre (9% left, 13% right).
+   POEMS: the font size is calculated so a line of --chars characters fits the width
+   without wrapping. Raise --chars for smaller text, lower it for bigger text.
+   For one page only: <body class="poem" style="--chars: 40">
+   PROSE has its own fixed size and is justified. */
 @media (max-width: 767px) {
-  .poem { --chars: 30; }
+  .poem { --chars: 38; }
   .poem .stars { padding-top: 14vh; }
   .poem .text {
-    margin: 8vh 1.25rem 0 20%;
+    margin: 8vh 13vw 0 9vw;
     width: auto;
-    font-size: calc((80vw - 1.25rem) / (var(--chars) * 0.6));
+    font-size: calc(78vw / (var(--chars) * 0.6));
   }
+  .poem .prose { font-size: 0.95rem; line-height: 1.6; }
 }
 
 /* ---------- Title animation extras (work on phones too) ---------- */
