@@ -65,7 +65,7 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.home .menu > * { grid-column: 2; }   /* change 2 to 3 to move the links */
+.home .menu > * { grid-column: 2 / 4; }   /* columns 2 and 3 */
 
 .home .links {
   margin: 0 0 1.25rem;
